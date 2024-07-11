@@ -8,6 +8,13 @@ const port = 3000; // You can change this to any port you prefer
 // Middleware to parse JSON body
 app.use(express.json());
 app.use(cors());
+
+
+//default end point
+app.get('/', (req, res) => {
+    res.json({message: "Server is working fine! Hello from the server!"})
+})
+
 // GET endpoint to receive messages
 app.get("/messages", (req, res) => {
   // Handle GET request to /messages
